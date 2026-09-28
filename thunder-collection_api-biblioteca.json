@@ -1,0 +1,181 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "API Biblioteca - Proyecto Integrador",
+  "collectionId": "api-biblioteca-collection",
+  "dateExported": "2026-09-28",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "_id": "req-01",
+      "colId": "api-biblioteca-collection",
+      "containerId": "",
+      "name": "01 - GET /api/libros - Listar libros (200)",
+      "url": "http://127.0.0.1:8000/api/libros",
+      "method": "GET",
+      "sortNum": 10000,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req-02",
+      "colId": "api-biblioteca-collection",
+      "containerId": "",
+      "name": "02 - POST /api/libros - Crear libro con body válido (201)",
+      "url": "http://127.0.0.1:8000/api/libros",
+      "method": "POST",
+      "sortNum": 20000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"titulo\": \"Rayuela\",\n  \"autor\": \"Julio Cortázar\",\n  \"anio_publicacion\": 1963,\n  \"disponible\": true\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "req-03",
+      "colId": "api-biblioteca-collection",
+      "containerId": "",
+      "name": "03 - GET /api/libros/1 - Ver detalle ID existente (200)",
+      "url": "http://127.0.0.1:8000/api/libros/1",
+      "method": "GET",
+      "sortNum": 30000,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req-04",
+      "colId": "api-biblioteca-collection",
+      "containerId": "",
+      "name": "04 - GET /api/libros/999 - Error recurso no encontrado (404)",
+      "url": "http://127.0.0.1:8000/api/libros/999",
+      "method": "GET",
+      "sortNum": 40000,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req-05",
+      "colId": "api-biblioteca-collection",
+      "containerId": "",
+      "name": "05 - POST /api/libros - Error formato JSON roto (400)",
+      "url": "http://127.0.0.1:8000/api/libros",
+      "method": "POST",
+      "sortNum": 50000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"titulo\": \"JSON Roto a propósito\",\n",
+        "form": []
+      }
+    },
+    {
+      "_id": "req-06",
+      "colId": "api-biblioteca-collection",
+      "containerId": "",
+      "name": "06 - POST /api/libros - Error validación campo vacío (422)",
+      "url": "http://127.0.0.1:8000/api/libros",
+      "method": "POST",
+      "sortNum": 60000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"titulo\": \"\"\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "req-07",
+      "colId": "api-biblioteca-collection",
+      "containerId": "",
+      "name": "07 - PATCH /api/libros/1 - Actualizar parcialmente (200)",
+      "url": "http://127.0.0.1:8000/api/libros/1",
+      "method": "PATCH",
+      "sortNum": 70000,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"disponible\": false\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "req-08",
+      "colId": "api-biblioteca-collection",
+      "containerId": "",
+      "name": "08 - DELETE /api/libros/1 - Borrar libro (200)",
+      "url": "http://127.0.0.1:8000/api/libros/1",
+      "method": "DELETE",
+      "sortNum": 80000,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "_id": "req-09",
+      "colId": "api-biblioteca-collection",
+      "containerId": "",
+      "name": "09 - GET /api/libros/1 - Confirmar inexistencia post delete (404)",
+      "url": "http://127.0.0.1:8000/api/libros/1",
+      "method": "GET",
+      "sortNum": 90000,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ]
+    }
+  ]
+}
